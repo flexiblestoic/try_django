@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container text-center">
+    
+    
+    <form action="." method = "POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        
+        <div class="col-md-6 mx-auto p-2">
+            <input type="submit" value="Create article">
+        </div> 
+    </form>
+
+
+{% if object %}
+
+<p>Your article has been created</p>
+
+<a href="/articles/{{object.id}}/">{{object.title}} - {{object.content}}</a>
+
+{% endif %}
+
+</div>
+{% endblock content %}
