@@ -28,7 +28,7 @@ DEBUG = str(os.environ.get('DEBUG')) == '1'
 print(DEBUG)
 
 ALLOWED_HOSTS = ['python.ajfro.yo.fr', 'localhost', '127.0.0.1']
-
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'articles'
+    'articles',
+    'accounts',
+    'forms_app',
+    'try_django'
 ]
 
 MIDDLEWARE = [
@@ -122,6 +125,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.environ.get('STATIC_ROOT')
+
+# STATIC_URL = '/static/'
+# STATIC_ROOT = '/home/pythcfpp/public_html/static'
+
+# if os.environ.get('STATIC_ROOT'):
+#     STATIC_ROOT = os.environ.get('STATIC_ROOT')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
